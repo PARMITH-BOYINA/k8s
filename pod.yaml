@@ -8,3 +8,5 @@ spec:
   containers:
     - name: fitness-container
       image: parmith/fit:v1.0.0
+      ports:
+        - containerPort: 80
