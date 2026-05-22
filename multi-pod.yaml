@@ -10,8 +10,7 @@ spec:
       image: parmith/fit:v1.0.0
       ports:
         - containerPort: 80
- 
-  containers:
+
     - name: Vegtable-container
       image: parmith/veg:1.0.0.1
       ports:
