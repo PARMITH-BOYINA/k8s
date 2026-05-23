@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: fitness-pod
+  labels: 
+    first: app
+spec: # Behaviour of the replicaset
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: web
+  template:
+    metadata: 
+      labels: 
+        app: web
+    spec: # behaviour fo the pod
+      spec:
+  containers:
+    - name: fitness-container
+      image: parmith/fit:v1.0.0
+      ports:
+        - containerPort: 90
