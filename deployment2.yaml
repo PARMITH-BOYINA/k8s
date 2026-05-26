@@ -21,6 +21,13 @@ spec: # Behaviour of the replicaset
            ports:
              - containerPort: 5000
 
+           envFrom:
+           - configMapRef:
+                  name: parmith-configmap
+
+           - secretRef:
+                name: fitness-secret
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -32,4 +39,4 @@ spec:
    - protocol: TCP
      port: 5000
      targetPort: 5000
-  type: NodePort
+  type: LoadBalancer
